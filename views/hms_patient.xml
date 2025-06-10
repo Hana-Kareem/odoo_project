@@ -1,0 +1,81 @@
+<odoo>
+    <record id="hms_tree_view" model="ir.ui.view">
+        <field name="name">hms.tree.view</field>
+        <field name="model">hms.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="age"/>
+                <field name="birth_date"/>
+                <field name="blood_type"/>
+                <field name="address" optional="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hms_form_view" model="ir.ui.view">
+        <field name="name">hms.form.view</field>
+        <field name="model">hms.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="General Info.">
+                            <group name="first_name"/>
+                            <group name="last_name"/>
+                            <group name="age"/>
+                            <group name="birth_date"/>
+                            <group name="blood_type"/>
+                        </group>
+                        <group string="Additional Info.">
+                            <group name="history_data"/>
+                            <group name="history_name"/>
+                            <group name="cr_ratio"/>
+                            <group name="pcr"/>
+                            <group name="image"/>
+                            <group name="address"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hms_search_view" model="ir.ui.view">
+        <field name="name">hms.search.view</field>
+        <field name="model">hms.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="first_name"/>
+                <field name="birth_date"/>
+                <field name="age"/>
+                <field name="blood_type"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="hms_patient_action" model="ir.actions.act_window">
+        <field name="name">HMS App</field>
+        <field name="res_model">hms.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hms_menu_create"
+              name="Create Patient"
+              parent="menu_root_hms"
+              action="hms_patient_action"/>
+
+
+
+    <menuitem id="hms_menu_view"
+              name="View Patient"
+              parent="menu_root_hms"
+              action="hms_patient_action"/>
+
+
+</odoo>
