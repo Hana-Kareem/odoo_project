@@ -9,9 +9,11 @@
                ],
     'application': True,
     'data': [
+        'data/data.xml',
         'security/ir.model.access.csv',
         'views/base_menus.xml',
-        'views/book.xml'
+        'views/book.xml',
         'views/publisher.xml',
+        'wizard/add_publisher_wizard.xml',
     ],
 }
